@@ -1,0 +1,35 @@
+# Test against the latest version of latest Node.js version and LTS version
+environment:
+  matrix:
+    - nodejs_version: "12"
+    - nodejs_version: "10"
+
+# 32bit and 64bit support tested, 4 jobs total
+platform:
+  - x86
+  - x64
+
+# Install scripts. (runs after repo cloning)
+install:
+
+  # Get the latest stable version of Node.js
+  - ps: Install-Product node $env:nodejs_version
+  # install modules
+  - npm i
+
+# Post-install test scripts.
+test_script:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+
+  # run tests
+  - npm run lint
+  - npx run build
+  - npx cap add android
+  - npx cap add electron
+  - npx cap copy
+  
+# Don't actually build.
+build: "off"
+  
