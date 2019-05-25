@@ -16,6 +16,11 @@ export class AppComponent {
       icon: 'home'
     },
     {
+      title: 'Lesson',
+      url: '/lesson',
+      icon: 'school'
+    },
+    {
       title: 'List',
       url: '/list',
       icon: 'list'
