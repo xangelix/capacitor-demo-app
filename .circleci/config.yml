@@ -49,11 +49,15 @@ jobs:
           name: Add android
           command: 'sudo npx cap add android'
       - run:
-          name: Add ios
-          command: 'npx cap add ios'
+          name: chmod working directory
+          command: 'sudo chmod 777 -R ./'
       - run:
           name: chown working directory
-          command: 'sudo chown -R distiller ./'
+          command: 'sudo chown -R $USER ./'
+      - run:
+          name: Add ios
+          command: 'npx cap add ios'
+
       - run:
           name: list directory
           command: 'ls ios'
