@@ -82,8 +82,11 @@ jobs:
           name: install gradle
           command: 'brew install gradle'
       - run:
+          name: print working directory
+          command: 'pwd'
+      - run:
           name: cd android
-          command: 'cd android'
+          command: 'cd android/'
       - run:
           name: list directory
           command: 'ls -alt'
