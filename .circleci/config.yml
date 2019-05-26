@@ -40,8 +40,11 @@ jobs:
           name: npm-lint
           command: 'npm run lint'
       - run:
-          name: ionic-build
-          command: 'npm ionic build'
+          name: npm install ionic
+          command: 'npm i -g ionic'
+      - run:
+          name: ionic build
+          command: 'ionic build'
       - run:
           name: Add android
           command: 'npx cap add android'
