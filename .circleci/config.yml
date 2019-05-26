@@ -52,8 +52,11 @@ jobs:
           name: Add ios
           command: 'sudo npx cap add ios'
       - run:
+          name: chown working directory
+          command: 'chown -R $USER:$USER ./'
+      - run:
           name: Add electron
-          command: 'sudo npx cap add electron --unsafe-perm'
+          command: 'sudo npx cap add electron'
       - run:
           name: Copy
           command: 'sudo npx cap copy'
