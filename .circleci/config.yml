@@ -71,6 +71,18 @@ jobs:
       - run:
           name: Update cocoapods repositories
           command: pod repo update
+      - run:
+          name: java version
+          command: java -version
+      - run:
+          name: install gradle
+          command: brew install gradle
+      - run:
+          name: cd android
+          command: cd android
+      - run:
+          name: build gradle
+          command: ./gradlew assembleDebug
 
       # Build the app and run tests
       - run:
