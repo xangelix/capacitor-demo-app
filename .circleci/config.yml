@@ -4,7 +4,7 @@ jobs:
 
     # Specify the Xcode version to use
     macos:
-      xcode: "8.3.3"
+      xcode: "10.2.1"
 
     steps:
       - run:
@@ -13,6 +13,12 @@ jobs:
       - run:
           name: install-node
           command: 'brew install node'
+      - run:
+          name: install-cask
+          command: 'brew tap caskroom/cask'
+      - run:
+          name: install-android-sdk
+          command: 'brew cask install android-sdk'
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
@@ -25,13 +31,37 @@ jobs:
       - checkout
 
       - run:
+          name: npm-i
+          command: 'npm i'
+      - run:
           name: npm-lint
           command: 'npm run lint'
+      - run:
+          name: ionic-build
+          command: 'npm ionic build'
+      - run:
+          name: Add android
+          command: 'npx cap add android'
+      - run:
+          name: Add ios
+          command: 'npx cap add ios'
+      - run:
+          name: Add electron
+          command: 'npx cap add electron'
+      - run:
+          name: Copy
+          command: 'npx cap copy'
 
       # Install CocoaPods
       - run:
           name: Install CocoaPods
-          command: pod install
+          command: sudo gem install cocoapods
+      - run:
+          name: Install Xcode Command Line Tools
+          command: xcode-select --install
+      - run:
+          name: Update cocoapods repositories
+          command: pod repo update
 
       # Build the app and run tests
       - run:
