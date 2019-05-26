@@ -35,7 +35,7 @@ jobs:
           command: 'ls'
       - run:
           name: npm-i
-          command: 'npm install'
+          command: 'sudo npm i'
       - run:
           name: npm-lint
           command: 'npm run lint'
