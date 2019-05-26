@@ -47,16 +47,16 @@ jobs:
           command: 'ionic build'
       - run:
           name: Add android
-          command: 'npx cap add android'
+          command: 'sudo npx cap add android'
       - run:
           name: Add ios
-          command: 'npx cap add ios'
+          command: 'sudo npx cap add ios'
       - run:
           name: Add electron
-          command: 'npx cap add electron'
+          command: 'sudo npx cap add electron'
       - run:
           name: Copy
-          command: 'npx cap copy'
+          command: 'sudo npx cap copy'
 
       # Install CocoaPods
       - run:
