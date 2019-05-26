@@ -55,6 +55,9 @@ jobs:
           name: chown working directory
           command: 'sudo chown -R distiller ./'
       - run:
+          name: chown working directory
+          command: 'chmod -R 777 ./'
+      - run:
           name: Add electron
           command: 'sudo npx cap add electron'
       - run:
