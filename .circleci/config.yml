@@ -50,13 +50,13 @@ jobs:
           command: 'sudo npx cap add android'
       - run:
           name: Add ios
-          command: 'sudo npx cap add ios'
+          command: 'npx cap add ios'
       - run:
           name: chown working directory
           command: 'sudo chown -R distiller ./'
       - run:
-          name: su root
-          command: 'sudo su root'
+          name: list directory
+          command: 'ls ios'
       #- run:
       #    name: Add electron
       #    command: 'sudo npx cap add electron'
@@ -68,9 +68,6 @@ jobs:
       - run:
           name: Install CocoaPods
           command: sudo gem install cocoapods
-      - run:
-          name: Install Xcode Command Line Tools
-          command: xcode-select --install
       - run:
           name: Update cocoapods repositories
           command: pod repo update
