@@ -80,7 +80,7 @@ jobs:
           command: 'java -version'
       - run:
           name: install gradle
-          command: 'sudo brew install gradle'
+          command: 'brew install gradle'
       - run:
           name: cd android
           command: 'cd android'
