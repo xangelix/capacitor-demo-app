@@ -57,9 +57,9 @@ jobs:
       - run:
           name: su root
           command: 'sudo su root'
-      - run:
-          name: Add electron
-          command: 'sudo npx cap add electron'
+      #- run:
+      #    name: Add electron
+      #    command: 'sudo npx cap add electron'
       - run:
           name: Copy
           command: 'sudo npx cap copy'
