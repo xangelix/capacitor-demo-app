@@ -31,8 +31,11 @@ jobs:
       - checkout
 
       - run:
+          name: list directory
+          command: 'ls'
+      - run:
           name: npm-i
-          command: 'npm i'
+          command: 'npm install'
       - run:
           name: npm-lint
           command: 'npm run lint'
