@@ -53,7 +53,7 @@ jobs:
           command: 'sudo npx cap add ios'
       - run:
           name: Add electron
-          command: 'sudo npx cap add electron'
+          command: 'sudo npx cap add electron --unsafe-perm'
       - run:
           name: Copy
           command: 'sudo npx cap copy'
