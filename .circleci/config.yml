@@ -35,7 +35,7 @@ jobs:
           command: 'ls'
       - run:
           name: npm-i
-          command: 'sudo npm i'
+          command: 'sudo npm i --unsafe-perm'
       - run:
           name: npm-lint
           command: 'sudo npm run lint'
