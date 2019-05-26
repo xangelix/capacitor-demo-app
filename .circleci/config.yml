@@ -53,7 +53,7 @@ jobs:
           command: 'sudo npx cap add ios'
       - run:
           name: chown working directory
-          command: 'chown -R distiller ./'
+          command: 'sudo chown -R distiller ./'
       - run:
           name: Add electron
           command: 'sudo npx cap add electron'
