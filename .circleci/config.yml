@@ -60,7 +60,7 @@ jobs:
 
       - run:
           name: list directory
-          command: 'ls ios'
+          command: 'ls -alt ios'
       #- run:
       #    name: Add electron
       #    command: 'sudo npx cap add electron'
@@ -71,27 +71,30 @@ jobs:
       # Install CocoaPods
       - run:
           name: Install CocoaPods
-          command: sudo gem install cocoapods
+          command: 'sudo gem install cocoapods'
       - run:
           name: Update cocoapods repositories
-          command: pod repo update
+          command: 'sudo pod repo update'
       - run:
           name: java version
-          command: java -version
+          command: 'java -version'
       - run:
           name: install gradle
-          command: brew install gradle
+          command: 'sudo brew install gradle'
       - run:
           name: cd android
-          command: cd android
+          command: 'cd android'
+      - run:
+          name: list directory
+          command: 'ls -alt'
       - run:
           name: build gradle
-          command: ./gradlew assembleDebug
+          command: './gradlew assembleDebug'
 
       # Build the app and run tests
       - run:
           name: Build and run tests
-          command: fastlane scan
+          command: 'fastlane scan'
           environment:
             SCAN_DEVICE: iPhone 6
             SCAN_SCHEME: WebTests
