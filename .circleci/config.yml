@@ -8,6 +8,9 @@ jobs:
 
     steps:
       - run:
+          name: update-brew
+          command: 'brew update'
+      - run:
           name: install-node
           command: 'brew install node'
       - run:
