@@ -50,10 +50,10 @@ jobs:
           command: 'sudo npx cap add android'
       - run:
           name: chmod working directory
-          command: 'sudo chmod 777 -R **'
+          command: 'sudo chmod 777 -R .'
       - run:
           name: chown working directory
-          command: 'sudo chown -R $USER **'
+          command: 'sudo chown -R $USER .'
       - run:
           name: Add ios
           command: 'npx cap add ios'
