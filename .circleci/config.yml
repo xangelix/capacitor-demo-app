@@ -50,7 +50,7 @@ jobs:
           command: 'sudo npx cap add android'
       - run:
           name: chmod working directory
-          command: 'sudo chmod 777 -R /Users/distiller/project'
+          command: 'sudo chmod -R 777 /Users/distiller/project'
       - run:
           name: chown working directory
           command: 'sudo chown -R $USER /Users/distiller/project'
