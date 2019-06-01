@@ -92,7 +92,10 @@ jobs:
           command: 'ls -alt'
       - run:
           name: build gradle
-          command: 'android/gradlew assembleDebug'
+          command: 'gradlew tasks --all'
+      - run:
+          name: build gradle2
+          command: 'gradlew build assembleDebug'
 
       # Build the app and run tests
       - run:
