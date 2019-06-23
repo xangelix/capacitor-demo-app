@@ -101,7 +101,10 @@ jobs:
           command: 'android/gradlew init'
       - run:
           name: build gradle4
-          command: 'android/gradlew build assembleDebug'
+          command: 'android/gradlew tasks --all'
+      - run:
+          name: build gradle5
+          command: 'android/gradlew build'
 
       # Build the app and run tests
       - run:
