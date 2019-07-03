@@ -57,7 +57,6 @@ jobs:
       - run:
           name: Add ios
           command: 'npx cap add ios'
-
       - run:
           name: list directory
           command: 'ls -alt ios'
@@ -106,8 +105,20 @@ jobs:
           name: build gradle5
           command: 'android/gradlew build'
       - run:
-          name: list directory gradle
+          name: list directory gradle1
           command: 'ls -alt android'
+      - run:
+          name: list directory gradle2
+          command: 'ls -alt android/app'
+      - run:
+          name: list directory gradle3
+          command: 'ls -alt android/app/build'
+      - run:
+          name: list directory gradle4
+          command: 'ls -alt android/app/build/outputs'
+      - run:
+          name: list directory gradle5
+          command: 'ls -alt android/app/build/outputs/apk'
 
       # Build the app and run tests
       - run:
