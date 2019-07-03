@@ -105,6 +105,9 @@ jobs:
       - run:
           name: build gradle5
           command: 'android/gradlew build'
+      - run:
+          name: list directory gradle
+          command: 'ls -alt android'
 
       # Build the app and run tests
       - run:
