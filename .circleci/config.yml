@@ -98,6 +98,9 @@ jobs:
           name: cat properties
           command: 'cat /Users/distiller/project/android/local.properties'
       - run:
+          name: accept licenses
+          command: 'yes | sudo /usr/local/share/android-sdk/tools/bin/sdkmanager --licenses'
+      - run:
           name: build gradle1
           working_directory: '/Users/distiller/project/android'
           command: './gradlew assembleDebug'
@@ -129,17 +132,6 @@ jobs:
           name: list directory gradle5
           command: 'ls -alt android/app/build/outputs/apk'
 
-      # Build the app and run tests
-      - run:
-          name: Build and run tests
-          command: 'fastlane scan'
-          environment:
-            SCAN_DEVICE: iPhone 6
-            SCAN_SCHEME: WebTests
-
-      # Collect XML test results data to show in the UI,
-      # and save the same XML files under test-results folder
-      # in the Artifacts tab
       - store_test_results:
           path: test_output/report.xml
       - store_artifacts:
