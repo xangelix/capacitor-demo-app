@@ -91,6 +91,9 @@ jobs:
           name: list directory
           command: 'ls -alt /Users/distiller/project/android'
       - run:
+          name: cat properties
+          command: 'cat /Users/distiller/project/android/local.properties'
+      - run:
           name: build gradle1
           working_directory: '/Users/distiller/project/android'
           command: './gradlew assembleDebug'
