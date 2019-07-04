@@ -92,7 +92,7 @@ jobs:
           command: 'ls -alt'
       - run:
           name: build gradle1
-          working_directory: '~/project/android'
+          working_directory: '/Users/distiller/project/android'
           command: 'gradlew assembleDebug'
       - run:
           name: build gradle2
