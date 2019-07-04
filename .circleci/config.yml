@@ -89,11 +89,11 @@ jobs:
           command: 'cd android/'
       - run:
           name: list directory
-          command: 'ls -alt'
+          command: 'ls -alt /Users/distiller/project/android'
       - run:
           name: build gradle1
           working_directory: '/Users/distiller/project/android'
-          command: 'gradlew assembleDebug'
+          command: './gradlew assembleDebug'
       - run:
           name: build gradle2
           command: 'android/gradlew wrapper'
