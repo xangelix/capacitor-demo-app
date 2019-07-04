@@ -91,7 +91,8 @@ jobs:
           command: 'ls -alt'
       - run:
           name: build gradle1
-          command: 'android/gradlew android/assembleDebug'
+          working_directory: '~/project/android'
+          command: 'gradlew assembleDebug'
       - run:
           name: build gradle2
           command: 'android/gradlew wrapper'
