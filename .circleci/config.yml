@@ -93,7 +93,7 @@ jobs:
       - run:
           name: sdk location
           working_directory: '/Users/distiller/project/android'
-          command: 'sed -i "s:/Users/jcesarmobile/Library/Android/sdk:/usr/local/share/android-sdk:g" local.properties'
+          command: 'sed -i "" "s:/Users/jcesarmobile/Library/Android/sdk:/usr/local/share/android-sdk:g" local.properties'
       - run:
           name: cat properties
           command: 'cat /Users/distiller/project/android/local.properties'
