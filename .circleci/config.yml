@@ -119,8 +119,8 @@ jobs:
           name: accept licenses
           command: '(echo y; echo y; echo y; echo y; echo y; echo y) | /usr/local/share/android-sdk/tools/bin/sdkmanager --licenses'
       - run:
-          name: find java
-          command: 'which java'
+          name: find openjdk
+          command: 'update-alternatives --list java'
       - run:
           name: build gradle1
           working_directory: '/Users/distiller/project/android'
