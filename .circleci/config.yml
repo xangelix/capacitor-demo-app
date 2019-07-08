@@ -120,9 +120,6 @@ jobs:
           command: '(echo y; echo y; echo y; echo y; echo y; echo y) | /usr/local/share/android-sdk/tools/bin/sdkmanager --licenses'
       - run:
           name: install openjdk
-          command: 'brew tap AdoptOpenJDK/openjdk'
-      - run:
-          name: install openjdk2
           command: 'brew cask install adoptopenjdk8'
       - run:
           name: build gradle1
