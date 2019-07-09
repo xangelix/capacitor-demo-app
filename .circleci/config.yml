@@ -122,21 +122,9 @@ jobs:
           name: install openjdk
           command: 'brew cask install caskroom/versions/adoptopenjdk8'
       - run:
-          name: build gradle1
+          name: gradle build
           working_directory: '/Users/distiller/project/android'
           command: './gradlew assembleDebug'
-      - run:
-          name: build gradle2
-          command: 'android/gradlew wrapper'
-      - run:
-          name: build gradle3
-          command: 'android/gradlew init'
-      - run:
-          name: build gradle4
-          command: 'android/gradlew tasks --all'
-      - run:
-          name: build gradle5
-          command: 'android/gradlew build'
       - run:
           name: list directory gradle1
           command: 'ls -alt android'
