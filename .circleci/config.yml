@@ -140,11 +140,13 @@ jobs:
       - run:
           name: list directory gradle5
           command: 'ls -alt android/app/build/outputs/apk'
-
+      - run:
+          name: list directory gradle6
+          command: 'ls -alt android/app/build/outputs/apk/debug'
       - store_test_results:
           path: test_output/report.xml
       - store_artifacts:
-          path: /tmp/test-results
+          path: /Users/distiller/project/android/app/build/outputs/apk/debug/app-debug.apk
           destination: scan-test-results
       - store_artifacts:
           path: ~/Library/Logs/scan
